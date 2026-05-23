@@ -1,0 +1,670 @@
+
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nguyễn Văn Quý - Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+.container {
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header {
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(15,23,42,.9);
+    z-index:999;
+    backdrop-filter:blur(10px);
+}
+
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo {
+    font-size:24px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+nav ul {
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a {
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover {
+    color:#38bdf8;
+}
+
+.hero {
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(15,23,42,.8),rgba(15,23,42,.9)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero h1 {
+    font-size:65px;
+    line-height:1.1;
+}
+
+.hero span {
+    color:#38bdf8;
+}
+
+.hero p {
+    margin-top:20px;
+    color:#cbd5e1;
+}
+
+.avatar {
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#38bdf8,#2563eb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:120px;
+    margin:auto;
+    box-shadow:0 0 50px rgba(56,189,248,.4);
+}
+
+.btn {
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 30px;
+    border-radius:12px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover {
+    transform:translateY(-5px);
+}
+
+section {
+    padding:100px 0;
+}
+
+.section-title {
+    font-size:42px;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
+
+.card {
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.card:hover {
+    transform:translateY(-10px);
+}
+
+.skills {
+    display:grid;
+    gap:25px;
+}
+
+.progress {
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progress-bar {
+    height:100%;
+    background:linear-gradient(90deg,#38bdf8,#2563eb);
+}
+
+.timeline {
+    border-left:3px solid #38bdf8;
+    padding-left:30px;
+}
+
+.timeline-item {
+    margin-bottom:40px;
+    position:relative;
+}
+
+.timeline-item::before {
+    content:'';
+    position:absolute;
+    width:20px;
+    height:20px;
+    background:#38bdf8;
+    border-radius:50%;
+    left:-41px;
+}
+
+.projects {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.project {
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project:hover {
+    transform:translateY(-10px);
+}
+
+.project img {
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.project-content {
+    padding:25px;
+}
+
+.contact-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.contact-item {
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+}
+
+footer {
+    text-align:center;
+    padding:40px 0;
+    background:#020617;
+}
+
+.toggle {
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#38bdf8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+
+.light {
+    background:#f8fafc;
+    color:#111827;
+}
+
+.light .card,
+.light .project,
+.light .contact-item {
+    background:white;
+}
+
+@media(max-width:900px){
+.hero-content {
+grid-template-columns:1fr;
+}
+
+.hero h1 {
+font-size:42px;
+}
+
+.avatar {
+width:250px;
+height:250px;
+font-size:80px;
+}
+
+nav ul {
+display:none;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="container">
+
+<nav>
+
+<div class="logo">Nguyễn Văn Quý</div>
+
+<ul>
+<li><a href="#about">Giới thiệu</a></li>
+<li><a href="#skills">Kỹ năng</a></li>
+<li><a href="#exp">Kinh nghiệm</a></li>
+<li><a href="#project">Dự án</a></li>
+<li><a href="#contact">Liên hệ</a></li>
+</ul>
+
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div data-aos="fade-right">
+
+<h1>Nguyễn Văn Quý<br><span>Kỹ Sư Xây Dựng</span></h1>
+
+<p>Mong muốn tìm được công việc phù hợp đểcó thểcống hiến, phát triển và
+vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
+
+<a class="btn" href="CV NGUYEN VAN QUY DH- CCHN.pdf" download>
+<i class="fa fa-download"></i>
+ Tải CV PDF
+</a>
+
+</div>
+
+<div data-aos="fade-left">
+
+<div class="avatar">
+<i class="fa-solid fa-user-tie"></i>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">Kỹ năng</h2>
+
+<div class="card">
+
+<div class="skills">
+
+
+    <div>
+
+    <div style="display:flex;justify-content:space-between;">
+    <span>ETABS</span>
+    <span>95%</span>
+    </div>
+
+    <div class="progress">
+    <div class="progress-bar" style="width:95%"></div>
+    </div>
+
+    </div>
+
+    
+
+    <div>
+
+    <div style="display:flex;justify-content:space-between;">
+    <span>AutoCAD</span>
+    <span>98%</span>
+    </div>
+
+    <div class="progress">
+    <div class="progress-bar" style="width:98%"></div>
+    </div>
+
+    </div>
+
+    
+
+    <div>
+
+    <div style="display:flex;justify-content:space-between;">
+    <span>Revit</span>
+    <span>92%</span>
+    </div>
+
+    <div class="progress">
+    <div class="progress-bar" style="width:92%"></div>
+    </div>
+
+    </div>
+
+    
+
+    <div>
+
+    <div style="display:flex;justify-content:space-between;">
+    <span>Sketchup</span>
+    <span>90%</span>
+    </div>
+
+    <div class="progress">
+    <div class="progress-bar" style="width:90%"></div>
+    </div>
+
+    </div>
+
+    
+
+    <div>
+
+    <div style="display:flex;justify-content:space-between;">
+    <span>Vray</span>
+    <span>88%</span>
+    </div>
+
+    <div class="progress">
+    <div class="progress-bar" style="width:88%"></div>
+    </div>
+
+    </div>
+
+    
+
+    <div>
+
+    <div style="display:flex;justify-content:space-between;">
+    <span>Kết cấu</span>
+    <span>96%</span>
+    </div>
+
+    <div class="progress">
+    <div class="progress-bar" style="width:96%"></div>
+    </div>
+
+    </div>
+
+    
+
+    <div>
+
+    <div style="display:flex;justify-content:space-between;">
+    <span>BIM</span>
+    <span>90%</span>
+    </div>
+
+    <div class="progress">
+    <div class="progress-bar" style="width:90%"></div>
+    </div>
+
+    </div>
+
+    
+
+    <div>
+
+    <div style="display:flex;justify-content:space-between;">
+    <span>Quản lý</span>
+    <span>85%</span>
+    </div>
+
+    <div class="progress">
+    <div class="progress-bar" style="width:85%"></div>
+    </div>
+
+    </div>
+
+    
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="exp">
+
+<div class="container">
+
+<h2 class="section-title">Kinh nghiệm</h2>
+
+<div class="timeline">
+
+
+    <div class="timeline-item">
+
+    <h3>Kỹ sư thiết kế kết cấu</h3>
+
+    <h4>Công ty tư vấn & xây dựng Trung Nam</h4>
+
+    <small>2020 - 2024</small>
+
+    <p>Thiết kế kết cấu, bóc khối lượng, lập hồ sơ kỹ thuật.</p>
+
+    </div>
+
+    
+
+    <div class="timeline-item">
+
+    <h3>Chủ trì thiết kế kết cấu</h3>
+
+    <h4>Công ty TNHH Xây dựng Nhơn Ái</h4>
+
+    <small>2024 - 2025</small>
+
+    <p>Triển khai hồ sơ kiến trúc và kết cấu.</p>
+
+    </div>
+
+    
+
+    <div class="timeline-item">
+
+    <h3>Phó phòng thiết kế</h3>
+
+    <h4>An Nhiên House</h4>
+
+    <small>2025 - 2026</small>
+
+    <p>Quản lý đội ngũ thiết kế và giám sát.</p>
+
+    </div>
+
+    
+
+</div>
+
+</div>
+
+</section>
+
+<section id="project">
+
+<div class="container">
+
+<h2 class="section-title">Dự án</h2>
+
+<div class="projects">
+
+
+    <div class="project">
+
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="project-content">
+
+    <h3>Thiết kế biệt thự hiện đại</h3>
+
+    <p>Thiết kế kết cấu và BIM cho biệt thự cao cấp.</p>
+
+    </div>
+
+    </div>
+
+    
+
+    <div class="project">
+
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="project-content">
+
+    <h3>Nhà phố thương mại</h3>
+
+    <p>Thiết kế và triển khai hồ sơ thi công.</p>
+
+    </div>
+
+    </div>
+
+    
+
+    <div class="project">
+
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="project-content">
+
+    <h3>Công trình dân dụng</h3>
+
+    <p>Thiết kế kết cấu bằng ETABS.</p>
+
+    </div>
+
+    </div>
+
+    
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">Liên hệ</h2>
+
+<div class="contact-grid">
+
+<div class="contact-item">
+<i class="fa fa-phone fa-2x"></i>
+<h3>Phone</h3>
+<p>077.404.3543
+</p>
+</div>
+
+<div class="contact-item">
+<i class="fa fa-envelope fa-2x"></i>
+<h3>Email</h3>
+<p>nguyenvanquy281103@gmail.com</p>
+</div>
+
+<div class="contact-item">
+<i class="fa fa-location-dot fa-2x"></i>
+<h3>Profession</h3>
+<p>Kỹ sư xây dựng</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="toggle" onclick="toggleMode()">
+<i class="fa fa-moon"></i>
+</div>
+
+<footer>
+
+<p>© 2026 Nguyễn Văn Quý Portfolio</p>
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+AOS.init({{
+duration:1000
+}})
+
+function toggleMode(){{
+document.body.classList.toggle('light')
+}}
+
+</script>
+
+</body>
+</html>
+
