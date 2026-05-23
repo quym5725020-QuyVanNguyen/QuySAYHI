@@ -8,7 +8,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nguyễn Văn Quý - Portfolio</title>
+<title>Nguyễn Văn Quý Portfolio</title>
+
+<meta name="description" content="Portfolio Website của Nguyễn Văn Quý">
+<meta name="keywords" content="Portfolio, CV, Kỹ sư xây dựng">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -21,276 +24,296 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <style>
 
-* {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:white;
-    overflow-x:hidden;
+html{
+scroll-behavior:smooth;
 }
 
-html {
-    scroll-behavior:smooth;
+body{
+font-family:'Poppins',sans-serif;
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+transition:.3s;
 }
 
-.container {
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
 }
 
-header {
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(15,23,42,.9);
-    z-index:999;
-    backdrop-filter:blur(10px);
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:999;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(10px);
 }
 
-nav {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 0;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
 }
 
-.logo {
-    font-size:24px;
-    font-weight:700;
-    color:#38bdf8;
+.logo{
+font-size:24px;
+font-weight:700;
+color:#38bdf8;
 }
 
-nav ul {
-    display:flex;
-    list-style:none;
-    gap:25px;
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
 }
 
-nav a {
-    color:white;
-    text-decoration:none;
-    transition:.3s;
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
 }
 
-nav a:hover {
-    color:#38bdf8;
+nav a:hover{
+color:#38bdf8;
 }
 
-.hero {
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:
-    linear-gradient(rgba(15,23,42,.8),rgba(15,23,42,.9)),
-    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop');
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.9)),
+url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop');
 
-    background-size:cover;
-    background-position:center;
+background-size:cover;
+background-position:center;
 }
 
-.hero-content {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+.hero-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
 }
 
-.hero h1 {
-    font-size:65px;
-    line-height:1.1;
+.hero h1{
+font-size:64px;
+line-height:1.1;
 }
 
-.hero span {
-    color:#38bdf8;
+.hero span{
+color:#38bdf8;
 }
 
-.hero p {
-    margin-top:20px;
-    color:#cbd5e1;
+.hero p{
+margin-top:20px;
+color:#cbd5e1;
 }
 
-.avatar {
-    width:350px;
-    height:350px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#38bdf8,#2563eb);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:120px;
-    margin:auto;
-    box-shadow:0 0 50px rgba(56,189,248,.4);
+.avatar{
+width:350px;
+height:350px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid #38bdf8;
+box-shadow:0 0 60px rgba(56,189,248,.5);
 }
 
-.btn {
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    border-radius:12px;
-    background:#38bdf8;
-    color:white;
-    text-decoration:none;
-    transition:.3s;
+.avatar-icon{
+width:350px;
+height:350px;
+border-radius:50%;
+background:linear-gradient(135deg,#38bdf8,#2563eb);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:120px;
+box-shadow:0 0 60px rgba(56,189,248,.5);
 }
 
-.btn:hover {
-    transform:translateY(-5px);
+.btn{
+display:inline-block;
+padding:15px 30px;
+margin-top:30px;
+border-radius:14px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+transition:.3s;
 }
 
-section {
-    padding:100px 0;
+.btn:hover{
+transform:translateY(-5px);
 }
 
-.section-title {
-    font-size:42px;
-    margin-bottom:50px;
-    color:#38bdf8;
+section{
+padding:100px 0;
 }
 
-.card {
-    background:#1e293b;
-    padding:30px;
-    border-radius:20px;
-    transition:.3s;
+.section-title{
+font-size:42px;
+margin-bottom:50px;
+color:#38bdf8;
 }
 
-.card:hover {
-    transform:translateY(-10px);
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:24px;
+transition:.3s;
 }
 
-.skills {
-    display:grid;
-    gap:25px;
+.card:hover{
+transform:translateY(-10px);
 }
 
-.progress {
-    height:10px;
-    background:#334155;
-    border-radius:20px;
-    overflow:hidden;
-    margin-top:10px;
+.skills{
+display:grid;
+gap:25px;
 }
 
-.progress-bar {
-    height:100%;
-    background:linear-gradient(90deg,#38bdf8,#2563eb);
+.progress{
+height:10px;
+background:#334155;
+border-radius:20px;
+overflow:hidden;
+margin-top:10px;
 }
 
-.timeline {
-    border-left:3px solid #38bdf8;
-    padding-left:30px;
+.progress-bar{
+height:100%;
+background:linear-gradient(90deg,#38bdf8,#2563eb);
 }
 
-.timeline-item {
-    margin-bottom:40px;
-    position:relative;
+.timeline{
+border-left:3px solid #38bdf8;
+padding-left:30px;
 }
 
-.timeline-item::before {
-    content:'';
-    position:absolute;
-    width:20px;
-    height:20px;
-    background:#38bdf8;
-    border-radius:50%;
-    left:-41px;
+.timeline-item{
+margin-bottom:40px;
+position:relative;
 }
 
-.projects {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+.timeline-item::before{
+content:'';
+position:absolute;
+width:20px;
+height:20px;
+background:#38bdf8;
+border-radius:50%;
+left:-41px;
 }
 
-.project {
-    background:#1e293b;
-    border-radius:20px;
-    overflow:hidden;
-    transition:.3s;
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
-.project:hover {
-    transform:translateY(-10px);
+.project{
+background:#1e293b;
+border-radius:24px;
+overflow:hidden;
+transition:.3s;
 }
 
-.project img {
-    width:100%;
-    height:220px;
-    object-fit:cover;
+.project:hover{
+transform:translateY(-10px);
 }
 
-.project-content {
-    padding:25px;
+.project img{
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
-.contact-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
+.project-content{
+padding:25px;
 }
 
-.contact-item {
-    background:#1e293b;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
-footer {
-    text-align:center;
-    padding:40px 0;
-    background:#020617;
+.contact-item{
+background:#1e293b;
+padding:30px;
+border-radius:24px;
+text-align:center;
 }
 
-.toggle {
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#38bdf8;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
+.qr-img{
+width:180px;
+border-radius:20px;
+margin-bottom:20px;
 }
 
-.light {
-    background:#f8fafc;
-    color:#111827;
+footer{
+padding:40px 0;
+text-align:center;
+background:#020617;
+}
+
+.toggle{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#38bdf8;
+display:flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+font-size:22px;
+z-index:999;
+}
+
+.light{
+background:#f8fafc;
+color:#111827;
 }
 
 .light .card,
 .light .project,
-.light .contact-item {
-    background:white;
+.light .contact-item{
+background:white;
 }
 
 @media(max-width:900px){
-.hero-content {
+
+.hero-content{
 grid-template-columns:1fr;
 }
 
-.hero h1 {
+.hero h1{
 font-size:42px;
 }
 
-.avatar {
+.avatar,
+.avatar-icon{
 width:250px;
 height:250px;
 font-size:80px;
 }
 
-nav ul {
+nav ul{
 display:none;
 }
+
 }
 
 </style>
@@ -300,6 +323,7 @@ display:none;
 <body>
 
 <header>
+
 <div class="container">
 
 <nav>
@@ -309,14 +333,15 @@ display:none;
 <ul>
 <li><a href="#about">Giới thiệu</a></li>
 <li><a href="#skills">Kỹ năng</a></li>
-<li><a href="#exp">Kinh nghiệm</a></li>
-<li><a href="#project">Dự án</a></li>
+<li><a href="#experience">Kinh nghiệm</a></li>
+<li><a href="#projects">Dự án</a></li>
 <li><a href="#contact">Liên hệ</a></li>
 </ul>
 
 </nav>
 
 </div>
+
 </header>
 
 <section class="hero">
@@ -330,7 +355,7 @@ display:none;
 <p>Mong muốn tìm được công việc phù hợp đểcó thểcống hiến, phát triển và
 vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
 
-<a class="btn" href="CV NGUYEN VAN QUY DH- CCHN.pdf" download>
+<a class="btn" href="CV NGUYEN VAN QUY DH- CCHN (1).pdf" download>
 <i class="fa fa-download"></i>
  Tải CV PDF
 </a>
@@ -339,9 +364,11 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
 
 <div data-aos="fade-left">
 
-<div class="avatar">
-<i class="fa-solid fa-user-tie"></i>
-</div>
+
+    <div class="avatar-icon">
+    <i class="fa-solid fa-user-tie"></i>
+    </div>
+    
 
 </div>
 
@@ -372,7 +399,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div>
@@ -387,7 +413,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div>
@@ -402,7 +427,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div>
@@ -417,7 +441,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div>
@@ -432,7 +455,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div>
@@ -447,7 +469,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div>
@@ -462,7 +483,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div>
@@ -477,7 +497,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
 </div>
@@ -488,7 +507,7 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
 
 </section>
 
-<section id="exp">
+<section id="experience">
 
 <div class="container">
 
@@ -508,7 +527,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     <p>Thiết kế kết cấu, bóc khối lượng, lập hồ sơ kỹ thuật.</p>
 
     </div>
-
     
 
     <div class="timeline-item">
@@ -522,7 +540,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     <p>Triển khai hồ sơ kiến trúc và kết cấu.</p>
 
     </div>
-
     
 
     <div class="timeline-item">
@@ -536,7 +553,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     <p>Quản lý đội ngũ thiết kế và giám sát.</p>
 
     </div>
-
     
 
 </div>
@@ -545,7 +561,7 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
 
 </section>
 
-<section id="project">
+<section id="projects">
 
 <div class="container">
 
@@ -567,7 +583,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div class="project">
@@ -583,7 +598,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
     <div class="project">
@@ -599,7 +613,6 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
     </div>
 
     </div>
-
     
 
 </div>
@@ -617,22 +630,34 @@ vượt qua giới hạn bản thân, phát triển kinh tếxã hội.</p>
 <div class="contact-grid">
 
 <div class="contact-item">
+
+<img src="zalo_qr.png" class="qr-img">
+
+<h3>Zalo QR</h3>
+
+<p>Quét mã để liên hệ</p>
+
+</div>
+
+<div class="contact-item">
+
 <i class="fa fa-phone fa-2x"></i>
+
 <h3>Phone</h3>
+
 <p>077.404.3543
 </p>
+
 </div>
 
 <div class="contact-item">
+
 <i class="fa fa-envelope fa-2x"></i>
-<h3>Email</h3>
-<p>nguyenvanquy281103@gmail.com</p>
-</div>
 
-<div class="contact-item">
-<i class="fa fa-location-dot fa-2x"></i>
-<h3>Profession</h3>
-<p>Kỹ sư xây dựng</p>
+<h3>Email</h3>
+
+<p>nguyenvanquy281103@gmail.com</p>
+
 </div>
 
 </div>
